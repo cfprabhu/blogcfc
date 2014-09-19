@@ -118,9 +118,12 @@ function checksubmit() {
 }
 
 $(document).ready(function() {
+	
 	$("##checkalllink").click(function(e) {
+		
 		$(".itemcheckbox").each(function(item) {
-			$(this).attr("checked", "checked");
+           
+   			$(this).attr("checked", "checked");
 		});
 		e.preventDefault();
 	});
@@ -128,10 +131,11 @@ $(document).ready(function() {
 	$("##decheckalllink").click(function(e) {
 		$(".itemcheckbox").each(function(item) {
 			$(this).removeAttr("checked");
+			// jQuery('.icheckbox_minimal').removeAttr('aria-checked');
 		});
-		e.preventDefault();
+		// e.preventDefault();
 	});
-
+$('input:checkbox').css("opacity","6");
 });
 </script>
 
@@ -157,7 +161,7 @@ $(document).ready(function() {
 <form name="listing" action="#attributes.deletelink#" method="post">
 <table class="table table-hover">
 	<tr>
-		<td>&nbsp;</td>
+		<td>Select</td>
 		<cfset counter = 0>
 		<cfloop index="c" list="#attributes.labellist#">
 			<cfset counter = counter + 1>
@@ -186,7 +190,7 @@ $(document).ready(function() {
 		<tr>
 			<td>
 				 
-				 	<input type="checkbox" name="mark" value="#attributes.data[attributes.linkval][currentRow]#"/></td>
+				 	<input type="checkbox" name="mark" value="#attributes.data[attributes.linkval][currentRow]#"/ class="itemcheckbox"></td>
 				  	
 			<cfloop index="c" list="#attributes.list#">
 				<cfif not structKeyExists(colData, c)>

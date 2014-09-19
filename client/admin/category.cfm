@@ -90,21 +90,17 @@
 	in the alias. Spaces should be replaced with dashes.
 	</p>
 	
-	<form action="category.cfm?id=#url.id#" method="post">
-	<table>
-		<tr>
-			<td align="right">name:</td>
-			<td><input type="text" name="name" value="#form.name#" class="txtField" maxlength="50"></td>
-		</tr>
-		<tr>
-			<td align="right">alias:</td>
-			<td><input type="text" name="alias" value="#form.alias#" class="txtField" maxlength="50"></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td><input type="submit" name="save" value="Save"> <input type="submit" name="cancel" value="Cancel"></td>
-		</tr>
-	</table>
+	<form action="category.cfm?id=#url.id#" method="post" role="form">
+			<div class="form-group">
+    			<label for="name">name:</label>
+    			<input type="text" name="name" class="form-control" value="#form.name#">
+    		</div>	
+    		<div class="form-group">
+    			<label for="alias">alias:</label>
+    			<input type="text" name="alias" class="form-control" value="#form.alias#">
+    		</div>	
+			<input type="submit" name="save" value="Save" class="btn btn-primary"> 
+			<input type="submit" name="cancel" value="Cancel" class="btn btn-danger">
 	</form>
 	<script language="javaScript" TYPE="text/javascript">
 	<!--

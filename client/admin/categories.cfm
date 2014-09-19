@@ -26,7 +26,7 @@
 
 	<cfoutput>
 		<div class="jumbotron">
-		  <h1>categories</h1>
+		  
 		  <p>
 				Your blog currently has 
 				<cfif categories.recordCount>

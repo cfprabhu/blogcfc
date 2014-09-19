@@ -129,8 +129,9 @@ $(document).ready(function() {
 		$(".itemcheckbox").each(function(item) {
 			$(this).removeAttr("checked");
 		});
-		e.preventDefault();
+		// e.preventDefault();
 	});
+	$('input:checkbox').css("opacity","6");
 
 });
 </script>
@@ -155,9 +156,9 @@ $(document).ready(function() {
 
 <p>
 <form name="listing" action="#attributes.deletelink#" method="post">
-<table cellspacing="0" cellpadding="5" class="adminListTable" border="0">
-	<tr class="adminListHeader">
-		<td width="30">&nbsp;</td>
+<table class="table table-hover">
+	<tr>
+		<td>Select</td>
 		<cfset counter = 0>
 		<cfloop index="c" list="#attributes.labellist#">
 			<cfset counter = counter + 1>
@@ -183,8 +184,10 @@ $(document).ready(function() {
 	<cfoutput query="attributes.data" startrow="#(url.page-1)*attributes.perpage + 1#" maxrows="#attributes.perpage#">
 		<cfset theVal = attributes.data[attributes.linkval][currentRow]>
 		<cfset theLink = attributes.editlink & "?id=#theVal#">
-		<tr class="adminList#currentRow mod 2#">
-			<td width="20"><input type="checkbox" name="mark" value="#attributes.data[attributes.linkval][currentRow]#" class="itemcheckbox" /></td>
+		<tr>
+			<td>
+				<input type="checkbox" name="mark" value="#attributes.data[attributes.linkval][currentRow]#" class="itemcheckbox" />
+			</td>
 			<cfloop index="c" list="#attributes.list#">
 				<cfif not structKeyExists(colData, c)>
 					<cfset value = attributes.data[c][currentRow]>
@@ -267,10 +270,10 @@ $(document).ready(function() {
 </p>
 
 <div class="buttonbar">
-<a href="" id="checkalllink" class="button">Check All</a> 
-<a href="" id="decheckalllink" class="button">Uncheck All</a> 
-<cfif attributes.showAdd><a href="#attributes.editlink#?id=0&amp;#attributes.querystring#" class="button">Add #attributes.label#</a></cfif>
-<a href="javascript:checksubmit()" class="button">Delete Selected</a>
+<a href="" id="checkalllink" class="btn btn-primary">Check All</a> 
+<a href="" id="decheckalllink" class="btn btn-primary">Uncheck All</a> 
+<cfif attributes.showAdd><a href="#attributes.editlink#?id=0&amp;#attributes.querystring#" class="btn btn-primary">Add #attributes.label#</a></cfif>
+<a href="javascript:checksubmit()" class="btn btn-danger">Delete Selected</a>
 </div>
 </cfoutput>
 

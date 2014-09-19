@@ -11,6 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
 <!--<link rel="stylesheet" type="text/css" href="#application.rooturl#/includes/admin.css" media="screen" />
 <script type="text/javascript" src="#application.rooturl#/includes/jquery.min.js"></script>
 <script type="text/javascript" src="#application.rooturl#/includes/jquery.selectboxes.js"></script>
@@ -83,7 +84,7 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                                    <img src="" class="img-circle" alt="User Image" />
                                     <p>
                                         #session.name#
                                         <small>MitrahSoft</small>
@@ -116,7 +117,7 @@
                         <ul class="sidebar-menu">
                         	<li><a href="index.cfm"><i class="fa fa-home"></i>Home</a></li>
                         	<cfif application.blog.isBlogAuthorized('ManageCategories')>
-						<li><a href="categories.cfm"><i class="fa fa-th"></i>Categories</a></li>
+						       <li><a href="categories.cfm"><i class="fa fa-th"></i>Categories</a></li>
 							</cfif>
                         	<li class="treeview">
                                 <a href="##">
@@ -155,7 +156,6 @@
 									<cfif application.blog.isBlogAuthorized('ManageUsers')>
 										<li><a href="users.cfm"><i class="fa fa-angle-double-right"></i> Users</a></li>
 									</cfif>
-									<li><a href="updatepassword.cfm"><i class="fa fa-angle-double-right"></i> Update Password</a><li>
 									<li><a href="subscribers.cfm"><i class="fa fa-angle-double-right"></i> Subscribers</a></li>
 									<li><a href="mailsubscribers.cfm"><i class="fa fa-angle-double-right"></i> Mail Subscribers</a></li>
                                     <cfif application.blog.isBlogAuthorized('PageAdmin')>
