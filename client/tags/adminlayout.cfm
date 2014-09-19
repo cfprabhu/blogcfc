@@ -43,6 +43,11 @@
 <!-- AdminLTE App -->
 <script src="#application.rooturl#/includes/app.js" type="text/javascript"></script>
 <script src="#application.rooturl#/includes/jquery.validate-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+ $(function() {
+    $('input:checkbox').css('opacity','1');
+ });
+</script>
 
 <cfif NOT caller.isLoggedIn()>
   <style type="text/css">
